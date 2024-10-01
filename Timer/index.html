@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+  <title>Timer</title>
+  <link rel="icon" type="image/x-icon" href="/img/clock.png">
+</head>
+<main>
+  <div id="circleNeon" class="circle">
+    <div id="stopwatch" class="stopwatch">00:00</div>
+    <div class="buttons">
+      <div class="stop" onclick="stop()"></div>
+      <div id="play-pause" class="paused" onclick="playPause()"></div>
+
+    </div>
+  </div>
+  <div id="seconds-sphere" class="seconds-sphere"></div>
+  <div class="neon-effect"></div>
+
+
+</main>
+<div class="time-input-div"> Cuenta atrás</div>
+<div class="buttons-time-down">
+  <button class="buttons-control" onclick="timeUp()">+</button>
+  <button class="buttons-control" onclick="timeDown()">-</button>
+
+</div>
+
+<body>
+  <audio id="alarmSound" src="/audio/generic-alarm.mp3"></audio>
+</body>
+
+</html>
