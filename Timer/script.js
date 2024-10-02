@@ -3,6 +3,8 @@ const playPauseButton = document.getElementById('play-pause');
 const secondsSphere = document.getElementById('seconds-sphere');
 const alarmSound = document.getElementById("alarmSound");
 const circleNeon = document.getElementById('circleNeon');
+const multipler = document.getElementById('rang');
+
 
 let stopwatchInterval;
 let runningTime = 0;
@@ -10,6 +12,9 @@ let time_Down = true;
 let duration = 0;
 let durationDow = 0;
 let countTime = false;
+let multip = 0;
+
+
 
 const playPause = () => {
   if (time_Down) {
@@ -91,17 +96,18 @@ const timeUp = () => {
 
   }
   if (time_Down && !countTime) {
-    durationDow += 10000;
+    durationDow += rang();
     stopwatch.textContent = calculateTime(durationDow);
   }
 
 }
 const timeDown = () => {
+
   if (!time_Down) {
     timeDown = true;
   }
   if (time_Down && durationDow > 0 && !countTime) {
-    durationDow -= 10000;
+    durationDow -= rang();
     stopwatch.textContent = calculateTime(durationDow);
   }
 
@@ -119,6 +125,25 @@ const neon = () => {
     }
     second++
   }, 500);
+
+}
+const rang = () => {
+
+  multip = parseInt(multipler.value, 10);
+
+  switch (multip) {
+    case 0:
+      return 1000;
+
+    case 50:
+      return 10000;
+
+    case 100:
+      return 60000
+    default:
+      return 1000;
+
+  }
 
 }
 stop();

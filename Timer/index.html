@@ -27,8 +27,23 @@
 <div class="buttons-time-down">
   <button class="buttons-control" onclick="timeUp()">+</button>
   <button class="buttons-control" onclick="timeDown()">-</button>
-
 </div>
+
+<div class="multiplicador">
+  <label for="rang">Multiplicador</label>
+  <input id="rang" type="range" min="0" max="100" step="50" list="mark">
+</div>
+<div class="mark-multip">
+  <p>0x</p>
+  <p>10x</p>
+  <p>100x</p>
+</div>
+
+<datalist id="mark">
+  <option value="0"></option>
+  <option value="50"></option>
+  <option value="100"></option>
+</datalist>
 
 <body>
   <audio id="alarmSound" src="/audio/generic-alarm.mp3"></audio>
